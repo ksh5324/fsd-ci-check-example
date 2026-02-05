@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "fsd:check": "pnpm exec steiger ./src",
+    "fsd:check": "steiger ./src",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -23,6 +23,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "eslint-formatter-unix": "^9.0.1",
     "steiger": "^0.5.11",
     "tailwindcss": "^4",
     "typescript": "^5"
