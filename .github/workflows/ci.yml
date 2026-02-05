@@ -20,7 +20,7 @@ jobs:
           run_install: false
       - name: FSD CI Checks
         id: fsd
-        uses: ksh5324/fsd-ci-action@v2.0.3
+        uses: ksh5324/fsd-ci-action@v2.1.0
         with:
           working-directory: ${{ env.WORKDIR }}
           comment-on-pr: true
