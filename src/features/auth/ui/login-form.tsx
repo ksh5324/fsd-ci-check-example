@@ -1,6 +1,7 @@
 import { Button } from "@/shared/ui";
 
 export function LoginForm() {
+  const count: string = 1;
   return (
     <div className="flex flex-col gap-4 rounded-lg border border-neutral-200 p-6 shadow-sm">
       <div>
