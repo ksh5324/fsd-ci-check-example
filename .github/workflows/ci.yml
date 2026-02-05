@@ -1,0 +1,27 @@
+on:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    env:
+      WORKDIR: .
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.27.0
+          run_install: false
+      - uses: ksh5324/fsd-check-ci@v1.1.0
+        with:
+          working-directory: ${{ env.WORKDIR }}
+          comment-on-pr: true
+          comment-mode: replace
+          comment-header: "<!-- ci-checks-summary -->"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
